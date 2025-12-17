@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login - FashionHub</title>
+
+  <style>
+    /* 🌈 General Reset */
+    * {
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    /* 🧱 Login Container */
+    #q {
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+      padding: 40px 50px;
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+    }
+
+    /* 🏷️ Headings */
+    h1 {
+      color: #222;
+      text-decoration: underline;
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      color: #555;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    /* 📝 Form */
+    form {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+    }
+
+    label {
+      text-align: left;
+      font-weight: 600;
+      margin-top: 10px;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    input[type="text"],
+    input[type="tel"] {
+      padding: 12px;
+      font-size: 16px;
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+
+    input[type="text"]:focus,
+    input[type="tel"]:focus {
+      border-color: #ff5757;
+      box-shadow: 0 0 5px rgba(255, 87, 87, 0.4);
+    }
+
+    /* 🧾 Buttons */
+    button,
+    input[type="submit"] {
+      margin-top: 18px;
+      padding: 12px;
+      font-size: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #ff5757;
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease, transform 0.2s ease;
+    }
+
+    button:hover,
+    input[type="submit"]:hover {
+      background: #e04040;
+      transform: translateY(-2px);
+    }
+
+    /* 📱 Responsive */
+    @media (max-width: 480px) {
+      #q {
+        padding: 30px 25px;
+      }
+
+      h1 {
+        font-size: 24px;
+      }
+    }
+  </style>
+</head>
+<body>
+  
+
+  <div id="header"></div>
+
+  <div id="q">
+    <h1>LOGIN</h1>
+    <p>Welcome back! Log in to explore new styles, revisit your wishlist, and shop your favorites with just a click.</p>
+
+    <form onsubmit="return validateForm()">
+      <label for="username">Username</label>
+      <input type="text" id="username" name="username" placeholder="Enter your username" required>
+
+      <label for="mobile">Mobile Number</label>
+      <input type="tel" id="mobile" name="mobile" placeholder="Enter your mobile number" required>
+
+      <button type="button" onclick="sendOTP()">Send OTP</button>
+
+      <label for="otp">Enter OTP</label>
+      <input type="tel" id="otp" name="otp" placeholder="Enter your OTP" required>
+
+      <input type="submit" value="Login">
+    </form>
+  </div>
+
+  <script>
+    // Simple mock-up JS
+    function sendOTP() {
+      const mobile = document.getElementById("mobile").value;
+      if (mobile.trim() === "") {
+        alert("Please enter your mobile number first!");
+      } else {
+        alert("OTP has been sent to " + mobile);
+      }
+    }
+
+    function validateForm() {
+      alert("Login Successful!");
+      return false; // prevent actual form submission
+    }
+  </script>
+
+  <div id="footer"></div>
+  <script src="assets/js/include.js"></script>
+
+</body>
+</html>
